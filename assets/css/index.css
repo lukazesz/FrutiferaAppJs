@@ -1,0 +1,17 @@
+/* Ajustes para o carousel */
+.carousel {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 400px;
+}
+
+/* Espaçamento das seções */
+section {
+    padding: 60px 0;
+}
+
+

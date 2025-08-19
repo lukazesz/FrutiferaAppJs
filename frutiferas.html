@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/imagens/arvore-frutifera.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--Toastify CSS -->
+    <link rel="stylesheet" href="./node_modules/toastify-js/src/toastify.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <!-- Logo do site -->
+                <img src="./assets/imagens/arvore-frutifera.png" height="30px" alt="frutífera"
+                    class="logo-img d-inline-block align-text-top">
+                <!-- Nome da marca / link para a página inicial -->
+                <a class="navbar-brand" href="./index.html">Cad Fruti</a>
+                <!-- Botão do menu para telas pequenas -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Itens do menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <!-- Link para a página inicial -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Início</a>
+                        </li>
+                        <!-- Link para a seção de frutíferas -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#frutiferas">Frutíferas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="container py-5">
+        <h2 class="text-center mb-4">Frutíferas Cadastradas</h2>
+
+        <!-- Botão para abrir o modal de cadastro -->
+        <div class="text-center mb-4">
+            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#frutiferaModal">
+                Cadastrar Nova Frutífera
+            </button>
+        </div>
+
+        <!-- Container para os cards -->
+        <div id="arvoresContainer" class="row g-3">
+            <!-- Cards serão adicionados dinamicamente via JS -->
+        </div>
+
+        <!-- Modal para cadastrar nova frutífera -->
+        <div class="modal fade" id="frutiferaModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cadastrar Nova Frutífera</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="frutiferaForm">
+                            <div class="mb-3">
+                                <label for="imagemURL" class="form-label">Imagem URL</label>
+                                <input type="url" class="form-control" id="imagemURL" required>
+                            </div>
+                        <form id="frutiferaForm">
+                            <div class="mb-3">
+                                <label for="nomePopular" class="form-label">Nome Popular</label>
+                                <input type="text" class="form-control" id="nomePopular" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nomeCientifico" class="form-label">Nome Científico</label>
+                                <input type="text" class="form-control" id="nomeCientifico" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="producaoMedia" class="form-label">Produção Média por Safra (Kg)</label>
+                                <input type="number" class="form-control" id="producaoMedia" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="dataPlantio" class="form-label">Data do Plantio</label>
+                                <input type="date" class="form-control" id="dataPlantio" required>
+                            </div>
+                            <!-- Rodapé do modal com botões -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" id="saveFrutiferaBtn" class="btn btn-success">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer class="py-3 my-4 border-top text-center text-muted">
+        © 2021 Company, Inc
+    </footer>
+
+    <!-- Script do bootstrap e toastify -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./node_modules/toastify-js/src/toastify.js"></script>
+
+    <!-- Script principal do módulo frutíferas -->
+    <script type="module" src="./src/frutiferas.js"></script>
+</body>
+
+</html>

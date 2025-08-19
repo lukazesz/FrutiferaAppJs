@@ -1,0 +1,21 @@
+{
+  "name": "cad-frutiferasapp",
+  "version": "1.0.0",
+  "description": "Aplicativo de cadastro e visualização de frutíferas",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Inicie seu projeto manualmente abrindo o index.html\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seuusuario/seuprojeto.git"
+  },
+  "author": "Seu Nome",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "toastify-js": "^1.12.0"
+  }
+}
+

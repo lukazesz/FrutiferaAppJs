@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sítio Boa Fé</title>
+    <link rel="shortcut icon" href="./assets/imagens/arvore-frutifera.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS da pág -->
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <!-- Barra de navegação principal do site -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <!-- Logo -->
+                <img src="./assets/imagens/arvore-frutifera.png" height="30px" alt="logo"
+                    class="logo-img d-inline-block align-text-top">
+                <a class="navbar-brand" href="#">Sítio Boa Fé</a>
+                <!-- Botão de menu responsivo para telas menores -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links de navegação -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <!-- Link para a pág inicial -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./index.html">Início</a>
+                        </li>
+                        <!-- Link para pág frutíferas -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="./frutiferas.html">Frutíferas</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção inicial (Landing Page) com Carousel -->
+        <section id="home" class="py-5">
+            <div class="container">
+                <!-- Título de boas-vindas -->
+                <h2 class="text-center mb-4">O que priorizamos</h2>
+
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <!-- Carousel de imagens destacando pontos fortes -->
+                        <div id="propertyCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                            <!-- Área que contém as imagens -->
+                            <div class="carousel-inner">
+
+                                <!-- Imagem 1 -->
+                                <div class="carousel-item active">
+                                    <img src="https://www.gov.br/agricultura/pt-br/assuntos/noticias/tecnicas-sustentaveis-de-plantio-preservam-o-solo-e-aumentam-rendimento-da-producao/IMG_2815.JPG"
+                                        class="d-block w-100" alt="Plantio">
+                                    <!-- Legenda -->
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
+                                        <h5>Diversidade de frutíferas</h5>
+                                    </div>
+                                </div>
+
+                                <!-- Imagem 2 -->
+                                <div class="carousel-item">
+                                    <img src="https://images.unsplash.com/photo-1598752261216-56f14ff6c127?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGNvbGhlaXRhJTIwc2ElQzMlQkFkYXZlbHxlbnwwfDB8MHx8fDA%3D"
+                                        class="d-block w-100" alt="Colheita">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
+                                        <h5>Colheita saudável</h5>
+                                    </div>
+                                </div>
+
+                                <!-- Imagem 3 -->
+                                <div class="carousel-item">
+                                    <img src="https://www.gov.br/agricultura/pt-br/assuntos/noticias/tecnicas-sustentaveis-de-plantio-preservam-o-solo-e-aumentam-rendimento-da-producao/img_2824.jpg/@@images/3c45b957-fcdc-4eca-9895-7411281e501d.jpeg"
+                                        class="d-block w-100" alt="Sustentabilidade">
+                                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
+                                        <h5>Cultivo sustentável</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botões de navegação do carousel -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#propertyCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#propertyCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-2">
+                <h2 class="text-center mb-4">Principais Produções</h2>
+                <div class="row" id="cartoes">
+                    <!-- Os cards gerados pelo JS serão inseridos aqui -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="container">
+        <!-- Rodapé com informações e links -->
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="text-center text-muted">© 2021 Company, Inc</p>
+        </footer>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <!-- JavaScript principal (com import/export habilitado) -->
+    <script type="module" src="./src/index.js"></script>
+</body>
+
+</html>
