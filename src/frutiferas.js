@@ -1,32 +1,35 @@
 // Função para calcular a idade da árvore
-function calcularIdadeArvore(dataPlantio) {
-    let dataInicio = new Date(dataPlantio); // Data informada pelo usuário
-    let hoje = new Date(); // Data atual
+const calcularIdadeArvore = (dataPlantio) => {
+    let dataInicio = new Date(dataPlantio); // Variável que vai converter a data informada pelo usuário em um objeto date 
+    let hoje = new Date(); // Variável que cria um objeto com a data atual
 
-    // Diferença em anos
+    // Variável que armazena a diferença em anos das duas datas
     let idade = hoje.getFullYear() - dataInicio.getFullYear();
 
-    // Ajuste caso o aniversário da árvore ainda não tenha ocorrido neste ano
+    // Variáveis que irão armazenar o mês e dia atual
     let mesAtual = hoje.getMonth();
     let diaAtual = hoje.getDate();
+
+    // Variáveis que irão armazenar o mês e dia do plantio
     let mesPlantio = dataInicio.getMonth();
     let diaPlantio = dataInicio.getDate();
 
+    // Condicional que ajusta caso o aniversário da árvore ainda não tenha ocorrido neste ano
     if (mesAtual < mesPlantio || (mesAtual === mesPlantio && diaAtual < diaPlantio)) {
-        idade--;
+        idade--; // Reduz 1 ano se ainda não completou
     }
 
-    return idade;
+    return idade; // Return da idade já calculada
 }
 
 // Função para criar e adicionar um card de frutífera
 const addFrutiferaCard = (item) => {
     const container = document.getElementById('arvoresContainer');
 
-    // Calcula a idade da árvore com base na data de plantio
+    // Constante que calcula a idade da árvore com base na data de plantio
     const idade = calcularIdadeArvore(item.dataPlantio);
 
-    // Estrutura HTML do card
+    // Constante que recebe a strutura HTML do card 
     const cardHTML = `
 <div class="col-md-4">
     <div class="card h-100 shadow-sm">
@@ -42,22 +45,24 @@ const addFrutiferaCard = (item) => {
 </div>
 `;
 
-    // Insere o card no container
+    // Utilização do método insertAdjacentHTML para inserir o card no final container
     container.insertAdjacentHTML('beforeend', cardHTML);
 };
 
-// Carregar frutíferas do localStorage ao abrir a página
+// Função para carregar frutíferas do localStorage ao abrir a página
 const carregarCards = () => {
+    //Constante representando a lista de frutíferas já salvas no navegador, ou um array vazio se não houver nada
     const frutiferas = JSON.parse(localStorage.getItem('frutiferas')) ?? [];
     const container = document.getElementById('arvoresContainer');
-    container.innerHTML = ''; // Limpa os cards antes de carregar
+    container.innerHTML = ''; // Limpa o container para evitar duplicações
 
-    // Adiciona um card para cada frutífera salva
+    // Comando que vai pegar a lista frutiferas, percorrer cada frutífera salva e criar automaticamente um card na tela para ela, chamando a função addFrutiferaCard.
     frutiferas.forEach((item, index) => addFrutiferaCard(item, index));
 };
 
-// Limpar formulário após cadastro
+// Função responsável por limpar formulário após cadastro
 const limparForm = () => {
+    // Reseta os valores dos campos de input usando o .value=''
     document.getElementById('imagemURL').value = '';
     document.getElementById('nomePopular').value = '';
     document.getElementById('nomeCientifico').value = '';
@@ -65,13 +70,13 @@ const limparForm = () => {
     document.getElementById('dataPlantio').value = '';
 };
 
-// Salvar nova frutífera no localStorage
+// Capturando o evento de envio do formulário
 document.getElementById('frutiferaForm').addEventListener('submit', (event) => {
     event.preventDefault(); // Evita o reload da página
-    // Recupera lista existente ou cria uma nova
+    // Recupera lista que foi salva no localStorage, ou cria uma nova
     const frutiferas = JSON.parse(localStorage.getItem('frutiferas')) ?? [];
 
-    // Cria objeto com os dados do formulário
+    // Constante que cria um objeto com os dados do formulário
     const item = {
         imagemURL: document.getElementById('imagemURL').value,
         nomePopular: document.getElementById('nomePopular').value,
@@ -80,11 +85,11 @@ document.getElementById('frutiferaForm').addEventListener('submit', (event) => {
         dataPlantio: document.getElementById('dataPlantio').value,
     };
 
-    // Salva no array e no localStorage
+    // Métodos para salvar no array e atualizar o localStorage
     frutiferas.push(item);
     localStorage.setItem('frutiferas', JSON.stringify(frutiferas));
 
-    // Atualiza a interface com o novo card
+    // Atualiza a tela com o novo card automaticamente
     addFrutiferaCard(item, frutiferas.length - 1);
     limparForm();
 
