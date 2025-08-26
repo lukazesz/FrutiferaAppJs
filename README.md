@@ -19,6 +19,10 @@ Este repositório apresenta um projeto que simula a aplicação web de uma peque
 
     - Funções reutilizáveis que tornam o sistema mais limpo, dinâmico e escalável.
 
+## Link com o vídeo explicando sobre o projeto e o código
+
+https://youtu.be/5Xc4vtSbSwU
+
 ## ✔️ Conclusão
 
 Este projeto me deu uma oportunidade prática de aplicar conceitos fundamentais do desenvolvimento web, unindo estrutura **(HTML)**, estilização **(CSS/Bootstrap)** e lógica **(JavaScript)** em uma aplicação funcional. O aprendizado adquirido aqui pode servir como base para aplicações mais complexas, abrindo espaço para futuras melhorias como integração com banco de dados, autenticação de usuários e persistência de informações.
