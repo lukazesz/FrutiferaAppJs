@@ -22,8 +22,8 @@ let arvoresFrutiferasCard = [
     },
 ];
 
-let preparacoesCardapio = [];
+let frutiferasCard = [];
 
 let inserirPreparacao = () => { };
 
-export { arvoresFrutiferasCard, preparacoesCardapio, inserirPreparacao };
+export { arvoresFrutiferasCard, frutiferasCard, inserirPreparacao };
